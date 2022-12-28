@@ -1,0 +1,11 @@
+repeat wait() until game.Players;repeat wait() until game.Players.LocalPlayer;repeat wait() until game.ReplicatedStorage;
+local Games = {
+    [6918802270] = "projectnewworld";--Project NewWorld
+}
+local Supported = Games[game.PlaceId] or false
+if Supported ~= false then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/S1000RZ/DIAMOND-HUB/main/' .. Supported))()
+end
+if not game.PlaceId == Supported or Supported == false then
+    game.Players.LocalPlayer:Kick("Game Not Supported")
+end
