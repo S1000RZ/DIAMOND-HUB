@@ -4,7 +4,9 @@ local Games = {
 }
 local Supported = Games[game.PlaceId] or false
 if Supported ~= false then
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/S1000RZ/DIAMOND-HUB/main/' .. Supported))()
+    pcall(function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/S1000RZ/DIAMOND-HUB/main/' .. Supported))()
+    end)
 end
 if not game.PlaceId == Supported or Supported == false then
     game.Players.LocalPlayer:Kick("Game Not Supported")
